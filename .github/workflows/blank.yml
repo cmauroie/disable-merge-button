@@ -24,5 +24,5 @@ jobs:
       - name: Contains HOLD_MERGE label        
         if: contains(github.event.pull_request.labels.*.name, 'HOLD_MERGE')      
         run: |
-          echo "Do not merge ${{ github.event.pull_request.title }} PR with HOLD_MERGE label "
+          echo "Do not merge ${{ github.event.pull_request.head.ref }} PR with HOLD_MERGE label "
           required: false
