@@ -34,3 +34,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: contain deploy        
+        if: contains(github.event.pull_request.labels.*.name, 'deploy')      
+        run: |
+          echo "deploy********"
